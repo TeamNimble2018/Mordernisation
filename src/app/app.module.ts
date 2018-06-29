@@ -1,21 +1,32 @@
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from "@angular/common/http";
 
 import { AppComponent } from './app.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { AppRoutingModule } from './app.routing.module';
 import { SearchPolicyComponent } from './search/components/search-policy/search-policy.component';
-
+import { ProfileComponent } from './profile/profile.component';
+import {ProfileService} from './profile/profile.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchPolicyComponent
+    SearchPolicyComponent,
+    FooterComponent,
+    HeaderComponent,
+    ProfileComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ProfileService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

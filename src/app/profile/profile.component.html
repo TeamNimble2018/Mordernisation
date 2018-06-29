@@ -1,0 +1,50 @@
+<div class="col-md-6">
+<table>
+    <tr>
+      <td><button class="btn btn-success" (click)="updateProfile()">Update</button></td>
+      <td> <label for="PROFIL">PROFIL</label><label for="LDAP">Selection d'un profil LDAP</label></td>
+    </tr><tr> 
+      <td>Vie Collective</td> <td></td>
+    </tr><tr>
+        <td></td>
+        <td></td>
+    </tr><tr>
+      <td></td>
+      <td>
+        <div class="checkbox">
+          <label><input type="checkbox" id="Gestionnaire_Junior" [(ngModel)]="profile.GestionnaireJunior" >Gestionnaire Junior</label>
+        </div>
+      </td>
+    </tr><tr>
+      <td></td>
+      <td>
+        <div class="checkbox">
+          <label><input type="checkbox" id="Gestionnaire_Senior" [(ngModel)]="profile.GestionnaireSenior" >Gestionnaire Senior</label>
+        </div>
+      </td>
+    </tr><tr>
+      <td></td>
+      <td>
+        <div class="checkbox">
+          <label><input type="checkbox" id="Consultation" [(ngModel)]="profile.ConsultationCollective" >Consultation</label>
+        </div>
+      </td>
+    </tr><tr>
+      <td>Vie Individuelle</td>
+    </tr><tr>
+      <td></td>
+      <td>
+        <div class="checkbox">
+          <label><input type="checkbox" id="Gestionnaire" [(ngModel)]="profile.Gestionnaire" >Gestionnaire</label>
+        </div>
+      </td>
+    </tr><tr>
+      <td></td>
+      <td>
+        <div class="checkbox">
+          <label><input type="checkbox" id="Consultation" [(ngModel)]="profile.ConsultationIndividuelle" >Consultation</label>
+        </div>
+      </td>
+    </tr><tr>
+  </table>              
+  </div>
