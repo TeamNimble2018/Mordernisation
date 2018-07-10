@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { SearchPolicyComponent } from './search/components/search-policy/search-policy.component';
 import { ProfileComponent } from './profile/profile.component';
 import {ProfileService} from './profile/profile.service';
+import {SharedModule} from './Shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import {ProfileService} from './profile/profile.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ProfileService],
+  providers: [ProfileService,SharedModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

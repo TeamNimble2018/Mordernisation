@@ -22,9 +22,12 @@
     "@angular/platform-browser-dynamic": "6.0.6",
     "@angular/router": "6.0.6",
     "@ng-bootstrap/ng-bootstrap": "^2.1.2",
+    "@types/jquery": "^3.3.4",
+    "angular-sweetalert-service": "^2.0.2",
     "animate.css": "^3.6.1",
-    "bootstrap": "^4.1.1",
+    "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
+    "jquery": "^3.3.1",
     "rxjs": "^6.2.1",
     "rxjs-compat": "^6.2.1",
     "zone.js": "^0.8.26"
