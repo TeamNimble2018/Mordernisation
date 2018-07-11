@@ -1,0 +1,29 @@
+
+<div class="container">
+<a class="btn btn-info" routeLink='/user'>
+  <i class="fa fa-refresh icon-large"></i> Refresh</a>
+</div>
+<hr>
+
+<div class="container table-responsive">
+  <p><span style="font-family:Arial, Helvetica, sans-serif; color:red; font-weight: 800">USERID </span> <span style="font-family:Arial, Helvetica, sans-serif; color:blue; font-weight: 600">List</span></p>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Userid</th>
+        <th>Pool</th>
+        <th>Avismed</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td><a routerLinkActive="active" [routerLink]="['/user/edit',user.userId]">{{user.userId}}</a></td>
+        <td>{{ user.pool }}</td>
+        <td>{{ user.avismed }}</td>
+        <td>{{ user.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
