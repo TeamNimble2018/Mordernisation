@@ -23,7 +23,8 @@
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.css",
-              "node_modules/animate.css/animate.min.css"
+              "node_modules/animate.css/animate.min.css",
+              "node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": []
           },
@@ -75,7 +76,8 @@
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.css",
-              "node_modules/animate.css/animate.min.css"
+              "node_modules/animate.css/animate.min.css",
+              "node_modules/font-awesome/css/font-awesome.css"
             ],
             "assets": [
               "src/assets",
@@ -99,7 +101,7 @@
     },
     "nimble-modernisation-e2e": {
       "root": "",
-      "sourceRoot": "e2e",
+      "sourceRoot": "src",
       "projectType": "application",
       "architect": {
         "e2e": {
