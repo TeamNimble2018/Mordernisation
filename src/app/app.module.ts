@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { SearchPolicyComponent } from './search/components/search-policy/search-policy.component';
 import { ProfileComponent } from './profile/components/profile/profile.component';
 import {ProfileService} from './profile/services/profile.service';
-import {SharedModule} from './Shared/shared.module';
+import {SharedModule} from './Shared/services/shared.module';
 
 @NgModule({
   declarations: [

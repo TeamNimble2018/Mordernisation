@@ -4,7 +4,7 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
 import * as $ from 'jquery';
 import { Profile } from '../../models/profile.model';
 import { ProfileService } from '../../services/profile.service';
-import {SharedModule} from '../../../Shared/shared.module';
+import {SharedModule} from '../../../Shared/services/shared.module';
 
 @Component({
   templateUrl: './profile.component.html'
