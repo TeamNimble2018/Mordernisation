@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as $ from 'jquery';
-import { Profile } from '../models/profile.model';
-import { ProfileService } from './profile.service';
-import {SharedModule} from '../Shared/shared.module';
+import { Profile } from '../../models/profile.model';
+import { ProfileService } from '../../services/profile.service';
+import {SharedModule} from '../../../Shared/shared.module';
 
 @Component({
   templateUrl: './profile.component.html'

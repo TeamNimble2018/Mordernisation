@@ -12,11 +12,8 @@ const httpOptions = {
 export class ProfileService {
 
   constructor(private http:HttpClient) {}
-
-  //private userUrl = 'http://localhost:8080/user-portal/user';
-	private profileUrl = '/user-portal/api/';
-
   
+  private profileUrl = '/user-portal/api/';
 
   public updateProfile(profile) {
     return this.http.put<Profile>(this.profileUrl, profile);

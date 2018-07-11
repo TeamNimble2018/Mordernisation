@@ -5,12 +5,12 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 
 import { AppComponent } from './app.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './common/components/footer/footer.component';
+import { HeaderComponent } from './common/components/header/header.component';
 import { AppRoutingModule } from './app.routing.module';
 import { SearchPolicyComponent } from './search/components/search-policy/search-policy.component';
-import { ProfileComponent } from './profile/profile.component';
-import {ProfileService} from './profile/profile.service';
+import { ProfileComponent } from './profile/components/profile/profile.component';
+import {ProfileService} from './profile/services/profile.service';
 import {SharedModule} from './Shared/shared.module';
 
 @NgModule({
