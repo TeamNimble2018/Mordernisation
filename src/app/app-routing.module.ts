@@ -3,11 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { UsermanageComponent } from './usermanagement/components/usermanage/usermanage.component';
 import { UsermodifyComponent } from './usermanagement/components/usermodify/usermodify.component';
+import { FooterComponent } from './common/components/footer/footer.component';
+import { HeaderComponent } from './common/components/header/header.component';
+import { ProfileComponent } from './profile/components/profile/profile.component';
+import { SearchPolicyComponent } from './search/components/search-policy/search-policy.component';
 
 const routes: Routes = [
     { path: 'user', component: UsermanageComponent},
     {path: 'user/edit/:userid', component: UsermodifyComponent},
-    {path: '', component: UsermanageComponent}
+    //{path: '', component: ProfileComponent},
+    { path: 'profile', component: ProfileComponent }
 ];
 
 @NgModule({
@@ -15,4 +20,4 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ UsermanageComponent, UsermodifyComponent ]
+export const routingComponents = [ UsermanageComponent, UsermodifyComponent, FooterComponent, HeaderComponent, ProfileComponent, SearchPolicyComponent ]

@@ -1,0 +1,50 @@
+<div class="jumbotron">
+  <div class="container">
+      <div  class="row">
+                <div class="">
+                    <button class="btn btn-success" (click)="updateProfile()">Update</button>
+                </div>                
+                <h4><label for="PROFIL">PROFILE</label>&nbsp;&nbsp;&nbsp;<label for="LDAP">Selecting an LDAP profile</label></h4>                
+                <div><label for="Collective">Collective life</label></div>
+                <div class="checkbox"> 
+                    <label><input type="checkbox" [(ngModel)]="profile.GestionnaireJunior"  id="Gestionnaire_Junior" [checked]="profil1.value"   (change)="changeValue('Gestionnaire_Junior')  ">Junior Manager</label>						                     
+                </div>
+                <div class="checkbox"> 
+                    <label><input type="checkbox" [(ngModel)]="profile.GestionnaireSenior"  id="Gestionnaire_Senior" [checked]="profil2.value"   (change)="changeValue('Gestionnaire_Senior')">Senior Manager</label>
+                </div>
+                <div class="checkbox"> 
+                      <label><input type="checkbox"  [(ngModel)]="profile.ConsultationCollective" id="Consultation" [checked]="profil3.value"   (change)="changeValue('Consultation')">Consultation</label>
+                </div>
+                <div><label for="Individual">Individual Life</label></div>
+                <div class="checkbox">  
+                    <label><input type="checkbox" [(ngModel)]="profile.Gestionnaire" id="Gestionnaire"  [checked]="profil4.value"   (change)="changeValue('Gestionnaire')">Administrator</label>
+                </div>
+                <div class="checkbox"> 
+                    <label><input type="checkbox" [(ngModel)]="profile.ConsultationIndividuelle" id="ConsultationIndividuelle" [checked]="profil5.value" (change)="changeValue('ConsultationIndividuelle')">Consultation</label>
+                </div>                                    
+          </div>
+      </div>
+  </div>
+
+  <!-- Modal -->
+<button type="button" id="btnOpenPurchasePopup" (click)="openModal()" style="display: none"></button>
+<div [ngStyle]="{'display':display}"></div>
+<!-- Modal content-->
+<div class="container">
+  <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Sival Says : </h4>
+        </div>
+        <div class="modal-body">
+          <p></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal !-->
+</div>

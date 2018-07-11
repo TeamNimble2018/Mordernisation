@@ -1,1 +1,21 @@
-<router-outlet></router-outlet>
+<div class="container">
+	<div class="row">
+		<div  class="grid-container col-xs-12 col-sm-4 col-lg-3" >
+			<img src="assets/images/sival.jpg" class="img-responsive img-class" alt="Logo"/> 
+			<img src="assets/images/help.gif" class="right-icon" alt="Help" />
+			<img src="assets/images/lineback2.jpg" class="lineback-icon img-responsive" alt="lineback" />
+		</div >
+		<div  class="col-xs-12 col-sm-8 col-lg-9">	
+			<!-- header -->
+			<app-header></app-header>					
+			<!-- routes will be rendered here -->
+			<div class="container-flex">
+			<router-outlet></router-outlet>
+			</div>
+		</div >
+	</div>
+	<div  class="row">
+	<!-- footer -->
+	<app-footer></app-footer>
+	</div>
+</div>

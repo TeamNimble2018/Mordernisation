@@ -1,0 +1,19 @@
+.grid-container {
+    background-color:lightgrey;
+    padding-right: 2px;
+    padding-left: 15px;
+    padding-top: 10px;
+    height: 480px;
+}
+.right-icon
+{
+    float: right;
+}
+.lineback-icon{
+    height: 3px;
+    width: 100%;
+}
+.img-class{
+    height:80%;
+    width: 95%;
+}
