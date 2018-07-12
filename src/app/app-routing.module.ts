@@ -13,7 +13,8 @@ const routes: Routes = [
     { path: 'user', component: UsermanageComponent},
     {path: 'user/edit/:userid', component: UsermodifyComponent},
     {path: '', component: HomeComponent},
-    { path: 'profile', component: ProfileComponent }
+    { path: 'profile', component: ProfileComponent },
+    { path: 'search', component: SearchPolicyComponent }
 ];
 
 @NgModule({

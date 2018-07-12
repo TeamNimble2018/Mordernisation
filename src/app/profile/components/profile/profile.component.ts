@@ -7,7 +7,8 @@ import { ProfileService } from '../../services/profile.service';
 import {SharedModule} from '../../../Shared/services/shared.module';
 
 @Component({
-  templateUrl: './profile.component.html'
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
 	display='none';

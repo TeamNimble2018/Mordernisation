@@ -1,36 +1,20 @@
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
-		<!--<div  class="grid-container hidden-xs hidden-sm hidden-md col-lg-3 d-none d-lg-block" >
-			<img src="assets/images/side_menu.jpg" class="img-responsive img-class" alt="Logo"/> 
-			<img src="assets/images/help.gif" class="right-icon" alt="Help" />
-			<img src="assets/images/lineback2.jpg" class="lineback-icon img-responsive" alt="lineback" />
-		</div > -->
-		
-		<div class="hidden-xs hidden-sm hidden-md col-lg-3 col-md-3">
-			<div class="profile-sidebar">
-				<div class="profile-userpic">
+		<div class="col-lg-3 border-side display-none">
+
+				<div class="pdLeft mt-2">
 					<img src="assets/images/side_menu.jpg" class="img-responsive" alt="sidebar image">
-				</div>
-				<div class="profile-userpic float-right">
-					<img src="assets/images/help.gif" class="img-responsive" alt="help">
-				</div>
+				</div> 
 				<hr>
-			</div>
 		</div>
-
-
-
-		<div  class="col-xs-12 col-sm-8 col-lg-9">	
-			<!-- header -->
-			<app-header></app-header>					
-			<!-- routes will be rendered here -->
+		<div  class="col-xs-12 col-sm-12 col-lg-9 col-md-12">	
+			<app-header></app-header>				
 			<div class="container-flex">
 			<router-outlet></router-outlet>
 			</div>
 		</div >
 	</div>
 	<div  class="row">
-	<!-- footer -->
 	<app-footer></app-footer>
 	</div>
 </div>

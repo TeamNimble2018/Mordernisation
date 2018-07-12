@@ -1,9 +1,10 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule,HttpModule } from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,7 +16,6 @@ import { UserService } from './usermanagement/services/user.service';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SearchPolicyComponent } from './search/components/search-policy/search-policy.component';
 import { DatePickerComponent } from './search/components/date-picker/date-picker.component';
-import { FormsModule } from "@angular/forms";
 import { PopupModalsComponent } from './search/components/popup-modals/popup-modals.component'
 import { VictimeService } from './search/services/victime.service';
 import { PolicyService } from './search/services/policy.service';
@@ -27,7 +27,6 @@ import { BtsAccordianComponent } from './search/components/bts-accordian/bts-acc
   declarations: [
     AppComponent,
     routingComponents,
-    SearchPolicyComponent,
     DatePickerComponent,
     PopupModalsComponent,
     BtsAccordianComponent
@@ -39,7 +38,7 @@ import { BtsAccordianComponent } from './search/components/bts-accordian/bts-acc
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule.forRoot(), 
+    NgbModule.forRoot(),
     HttpModule
   ],
   providers: [ProfileService,SharedModule,UserService,VictimeService,PolicyService,TransactionService],

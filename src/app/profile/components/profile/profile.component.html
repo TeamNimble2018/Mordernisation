@@ -1,48 +1,54 @@
-<div class="jumbotron" style="background:#FFFFFF !important">
-  <div class="container">
-    <div class="row">
-      <!--<div class="">
-        <button class="btn btn-success" (click)="updateProfile()">Update</button>
-      </div> -->
+<div class="container">
+
+      <!-- 
       <div class="container-flex">
         <a class="btn btn-primary" (click)="updateProfile()">
           <i class="fa fa-edit icon-large"></i> Update </a>
-      </div>
+      </div>-->
       <hr>
-      <h4><label for="PROFIL">PROFILE</label>&nbsp;&nbsp;&nbsp;<label for="LDAP">Selecting an LDAP profile</label></h4>
-      <div><label for="Collective">Collective life</label></div>
-      <div class="checkbox">
-        <label><input type="checkbox" [(ngModel)]="profile.GestionnaireJunior"  id="Gestionnaire_Junior" [checked]="profil1.value"   (change)="changeValue('Gestionnaire_Junior')  ">Junior Manager</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" [(ngModel)]="profile.GestionnaireSenior"  id="Gestionnaire_Senior" [checked]="profil2.value"   (change)="changeValue('Gestionnaire_Senior')">Senior Manager</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox"  [(ngModel)]="profile.ConsultationCollective" id="Consultation" [checked]="profil3.value"   (change)="changeValue('Consultation')">Consultation</label>
-      </div>
-      <div><label for="Individual">Individual Life</label></div>
-      <div class="checkbox">
-        <label><input type="checkbox" [(ngModel)]="profile.Gestionnaire" id="Gestionnaire"  [checked]="profil4.value"   (change)="changeValue('Gestionnaire')">Administrator</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" [(ngModel)]="profile.ConsultationIndividuelle" id="ConsultationIndividuelle" [checked]="profil5.value" (change)="changeValue('ConsultationIndividuelle')">Consultation</label>
-      </div>
-    </div>
-  </div>
-</div>
+  
+          <h4><span class="largeFont">PROFILE</span>&nbsp;<span class="smallFont">Selecting an LDAP profile</span></h4> 
+          <hr/>
+          <div class="">
+              <button class="btn btn-primary" (click)="updateProfile()">Update</button>
+          </div>
+           <div class="mt-4"><label for="Collective">Collective life</label></div>
 
-<!-- Modal -->
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input mr3" [(ngModel)]="profile.GestionnaireJunior"  id="Gestionnaire_Junior" [checked]="profil1.value"   (change)="changeValue('Gestionnaire_Junior')  ">
+            <label class="form-check-label" for="Gestionnaire_Junior"  >Junior Manager</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input mr3" [(ngModel)]="profile.GestionnaireSenior"  id="Gestionnaire_Senior" [checked]="profil2.value"   (change)="changeValue('Gestionnaire_Senior')">
+            <label class="form-check-label" for="Senior_Manager"  >Senior Manager</label>
+          </div>
+          <div class="form-check">
+              <input type="checkbox" class="form-check-input mr3" [(ngModel)]="profile.ConsultationCollective" id="Consultation" [checked]="profil3.value"   (change)="changeValue('Consultation')">
+              <label class="form-check-label" for="Consultation"  >Consultation</label>
+          </div>
+          <div><label class="mt-4" for="Individual">Individual Life</label></div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input mr3" [(ngModel)]="profile.Gestionnaire" id="Gestionnaire"  [checked]="profil4.value"   (change)="changeValue('Gestionnaire')">            
+            <label class="form-check-label" for="Gestionnaire"  >Administrator</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input mr3" [(ngModel)]="profile.ConsultationIndividuelle" id="ConsultationIndividuelle" [checked]="profil5.value" (change)="changeValue('ConsultationIndividuelle')">
+            <label class="form-check-label" for="ConsultationIndividuelle"  >Consultation</label>
+          </div>
+  
+  </div>
+
+
 <button type="button" id="btnOpenPurchasePopup" (click)="openModal()" style="display: none"></button>
 
 <div [ngStyle]="{'display':display}"></div>
-<!-- Modal content-->
 <div class="container">
   <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title">Sival Says : </h4>
+          <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
           <p></p>
@@ -51,9 +57,6 @@
           <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
         </div>
       </div>
-      <!-- /.modal-content -->
     </div>
-    <!-- /.modal-dialog -->
   </div>
-  <!-- /.modal !-->
 </div>

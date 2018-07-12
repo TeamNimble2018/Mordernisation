@@ -1,7 +1,7 @@
 th {
     background-color: darkblue;
     color: white;
-};
+}
 
 .btn {
   margin: 6px 8px 6px 8px;
@@ -13,5 +13,16 @@ th {
   text-decoration:none;
   border: none;
   outline: none;
-};
+}
+
+.largeFont {
+  color:#dc3545;
+  font-size: 24px;
+  font-weight: bold;
+}
+.smallFont{
+  color:#007bff;
+  font-size: 18px;
+  font-weight: bold;
+}
 

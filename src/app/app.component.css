@@ -1,19 +1,16 @@
-.grid-container {
-    background-color:lightgrey;
-    padding-right: 2px;
-    padding-left: 15px;
-    padding-top: 10px;
-    height: 480px;
+.border-side{
+    border-right: 2px;
+    border-right-color:#d9dcdf;
+    border-right-style: solid;
+    height:100vh;
 }
-.right-icon
-{
-    float: right;
+
+.pdLeft{
+    padding-left:2%;
 }
-.lineback-icon{
-    height: 3px;
-    width: 100%;
-}
-.img-class{
-    height:80%;
-    width: 95%;
+
+@media only screen and (max-width: 1090px) {
+    .display-none {
+        display:none;
+    }
 }

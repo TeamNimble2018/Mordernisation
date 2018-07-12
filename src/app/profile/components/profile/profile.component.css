@@ -1,2 +1,10 @@
-
-
+.largeFont {
+    color:#dc3545;
+    font-size: 24px;
+    font-weight: bold;
+}
+.smallFont{
+    color:#007bff;
+    font-size: 18px;
+    font-weight: bold;
+}
