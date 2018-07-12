@@ -136,6 +136,10 @@
     },
     "@schematics/angular:directive": {
       "prefix": "app"
+    },
+    "@schematics/angular": {
+      "component": {
+      }
     }
   }
 }

@@ -2,14 +2,149 @@
 <div class="headerDiv"><span class="text-danger font-weight-bold headingOne" id="headOne">RESEARCH</span>
 <span class="text-primary font-weight-bold small headingSubtext" id="defination">Search Your Policy</span></div>
 <hr/>
-<div class="container-fluid">
-<form class="form-inline">
-    <div class="form-group">
-      <label for="policy" class="mr-sm-2">Policy:</label>
-      <input type="text" class="form-control mr-sm-2" id="policy"/>
-      <label for="employer" class="mr-sm-2">Employeer : </label>
-      <input type="text" class="form-control mr-sm-2" id="employer"/>
-    </div> 
-
-</form>
-</div>
+   
+          <form class="form-inline" (ngSubmit)="showData(content)" #searchForm="ngForm">
+           <div class="container-fluid">
+            <div class="row">
+                <div class="form-group pb-1 mr-3">
+                    <label class="mr-2 text-secondary" for="policyHolNo">Policy Holder No: </label> 
+                    <input type="number" class="form-control" id="policyHolNo" placeholder="Policy Holder No." name="policyHolNo" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                     title="Numbers only" ngModel required onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off min=0 #policyNumber/>
+                    <span *ngIf="!searchForm.valid" class="help-block"> &nbsp;&nbsp;*required</span>
+                  </div>
+                <div class="form-group pb-1 mr-3">
+                    <label class="mr-2 text-secondary" for="policyNo">policyNumber : </label> 
+                    <input type="number" class="form-control" id="policyNo" placeholder="Policy Number" name="policyNo" ngModel onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                    title="Numbers only" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off min=0/>
+                </div>
+                <div class="form-group pb-1 mr-3">
+                  <label class="mr-2 text-secondary" for="victim">Victim : </label> 
+                  <input type="text" class="form-control" id="victim" placeholder="Victime Name" name="victim" ngModel pattern="[a-zA-Z ]*" maxlength="50" onselectstart="return false" onpaste="return false;"
+                  onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)||event.charCode=== 32" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off/>
+              </div>
+               
+            </div>
+            <div class="row">
+                <div class="form-group pb-1 mr-3">
+                    <label class="mr-2 text-secondary" >Effective-Date : </label> 
+                    <app-date-picker (emitEffectiveDate)="setEffectiveDate($event)"></app-date-picker>
+                </div>
+            <div class="form-check form-check-inline">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="policy" name="policy" ngModel #policy>
+                        <label class="custom-control-label text-secondary" for="policy">Policy</label>
+                      </div>
+                    </div>
+                <div class="form-check form-check-inline">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="transaction" name="transaction" ngModel #transaction>
+                        <label class="custom-control-label text-secondary" for="transaction">Transaction</label>
+                      </div>
+                    </div>
+            </div>
+ 
+            <div class="row">               
+                    <div class="custom-control custom-checkbox mr-3">
+                        <input type="checkbox" class="custom-control-input" id="matured" name="matured" ngModel>
+                        <label class="custom-control-label text-secondary" for="matured">Matured</label>
+                      </div>  
+                    <div class="custom-control custom-checkbox mr-3">
+                        <input type="checkbox" class="custom-control-input" id="claimed" name="claimed" ngModel>
+                        <label class="custom-control-label text-secondary" for="claimed">Claimed</label>
+                      </div>
+                    <div class="custom-control custom-checkbox mr-3">
+                        <input type="checkbox" class="custom-control-input" id="extented" name="extented" ngModel>
+                        <label class="custom-control-label text-secondary" for="extented">Extented</label>
+                      </div>                  
+                      <div class="custom-control custom-checkbox mr-3">
+                          <input type="checkbox" class="custom-control-input" id="defaulter" name="defaulter" ngModel>
+                          <label class="custom-control-label text-secondary" for="defaulter">Defaulter</label>
+                        </div>
+                      <div class="custom-control custom-checkbox mr-3">
+                          <input type="checkbox" class="custom-control-input" id="ongoing" name="ongoing" ngModel>
+                          <label class="custom-control-label text-secondary" for="ongoing">Ongoing</label>
+                        </div>
+                      <div class="custom-control custom-checkbox mr-3">
+                          <input type="checkbox" class="custom-control-input" id="incubate" name="incubate" ngModel>
+                          <label class="custom-control-label text-secondary" for="incubate">Incubating</label>
+                        </div>
+                        
+            </div>
+            <div class="row">
+              <div class="" align="center">
+                <button type="submit" [disabled]="!searchForm.valid" class="btn btn-primary" >Search</button>
+              </div>
+              <div class="ml-3" align="center">
+                  <button type="button" class="btn btn-danger">Refresh</button>
+                </div>
+            </div> 
+          </div> 
+          </form>
+          <ng-template #content let-c="close" let-d="dismiss">
+                <div class="modal-header">
+                  <h4 class="modal-title">Policy Search Result</h4>
+                  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                 <div *ngIf="victimDetails === null"> 
+                  <ngb-alert type="danger" [dismissible]="false">
+                    <strong>Victim!</strong> not found, Please check <strong>Policy Holder Number</strong>
+                  </ngb-alert>
+                 </div> 
+                 <div *ngIf="victimDetails !== null"> 
+                    <ngb-alert type="primary" [dismissible]="false">
+                        {{victimDetails.type}} &nbsp;<strong>{{victimDetails.policyHolderNumber}}&nbsp;
+                        </strong><strong>{{victimDetails.victimeName}}</strong> &nbsp;{{victimDetails.age}} &nbsp; {{victimDetails.status}}
+                      </ngb-alert>
+                 </div>
+                 <div *ngIf="victimPolicy !== null&&policy.checked===true&&transaction.checked===false"> 
+                  <ngb-accordion [closeOthers]="true" >
+                    <ngb-panel id={{policy.policyNumber}} *ngFor="let policy of victimPolicy" [disabled]="true">
+                        <ng-template ngbPanelTitle>
+                            <span>{{policy.type}}&nbsp;|&nbsp;<strong>{{policy.policyNumber}}</strong>&nbsp;|&nbsp;<strong>{{policy.policyName}}</strong>&nbsp;|&nbsp;
+                                {{policy.effectiveDateString}}&nbsp;|&nbsp;{{policy.status}}&nbsp;|&nbsp;
+                            </span>
+                          </ng-template>
+                      <ng-template ngbPanelContent>
+                        <ngb-alert type="primary" [dismissible]="false" *ngFor="let transaction of policy.victimTransaction" >
+                          {{transaction.type}} &nbsp; {{transaction.transactionNumber}} 
+                          &nbsp;{{transaction.transactionType}} &nbsp;{{transaction.status}} &nbsp;
+                          {{transaction.transactionDateString}} &nbsp;
+                          </ngb-alert>
+                      </ng-template>
+                    </ngb-panel>                
+                  </ngb-accordion>
+               </div>
+               <div *ngIf="victimPolicy !== null&&policy.checked===true&&transaction.checked===true"> 
+                <ngb-accordion [closeOthers]="true" >
+                  <ngb-panel id={{policy.policyNumber}} *ngFor="let policy of victimPolicy" >
+                      <ng-template ngbPanelTitle>
+                          <span>{{policy.type}}&nbsp;|&nbsp;<strong>{{policy.policyNumber}}</strong>&nbsp;|&nbsp;<strong>{{policy.policyName}}</strong>&nbsp;|&nbsp;
+                              {{policy.effectiveDateString}}&nbsp;|&nbsp;{{policy.status}}&nbsp;|&nbsp;
+                          </span>
+                        </ng-template>
+                    <ng-template ngbPanelContent>
+                      <ngb-alert type="primary" [dismissible]="false" *ngFor="let transaction of policy.victimTransaction" >
+                        {{transaction.type}} &nbsp; {{transaction.transactionNumber}} 
+                        &nbsp;{{transaction.transactionType}} &nbsp;{{transaction.status}} &nbsp;
+                        {{transaction.transactionDateString}} &nbsp;
+                        </ngb-alert>
+                    </ng-template>
+                  </ngb-panel>                
+                </ngb-accordion>
+             </div>
+             <div *ngIf="victimPolicy === null&&policy.checked===false&&transaction.checked===true"> 
+                <ngb-alert type="primary" [dismissible]="false" *ngFor="let transaction of victimTransaction" >
+                    {{transaction.type}} &nbsp; {{transaction.transactionNumber}} 
+                    &nbsp;{{transaction.transactionType}} &nbsp;{{transaction.status}} &nbsp;
+                    {{transaction.transactionDateString}} &nbsp;{{transaction.policyNumber}} &nbsp;
+                    </ngb-alert>
+            </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-light" (click)="c('Close click')">Close</button>
+                </div>
+              </ng-template>    
+<app-popup-modals></app-popup-modals>
