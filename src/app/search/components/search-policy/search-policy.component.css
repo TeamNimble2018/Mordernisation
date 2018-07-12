@@ -8,3 +8,17 @@
     font-size: 18px;
     margin-left: 8px;
 }
+.row {
+    margin:15px 0;
+  }
+label {
+    margin-bottom: 0;
+    margin-left: 1px;
+}
+input.ng-invalid{
+    border:1px solid red;
+}
+.help-block{
+    color:red;
+    font-size:12px;
+}
