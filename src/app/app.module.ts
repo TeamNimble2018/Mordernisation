@@ -1,8 +1,17 @@
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule,HttpModule } from '@angular/common/http';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+
+import {ProfileService} from './profile/services/profile.service';
+import {SharedModule} from './Shared/services/shared.module';
+import { UserService } from './usermanagement/services/user.service';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SearchPolicyComponent } from './search/components/search-policy/search-policy.component';
 import { DatePickerComponent } from './search/components/date-picker/date-picker.component';
@@ -17,15 +26,23 @@ import { BtsAccordianComponent } from './search/components/bts-accordian/bts-acc
 @NgModule({
   declarations: [
     AppComponent,
+    routingComponents,
     SearchPolicyComponent,
     DatePickerComponent,
     PopupModalsComponent,
     BtsAccordianComponent
   ],
   imports: [
-    BrowserModule,NgbModule.forRoot(), FormsModule,HttpModule
+    BrowserModule,
+    AngularFontAwesomeModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule.forRoot(), 
+    HttpModule
   ],
-  providers: [VictimeService,PolicyService,TransactionService],
+  providers: [ProfileService,SharedModule,UserService,VictimeService,PolicyService,TransactionService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
